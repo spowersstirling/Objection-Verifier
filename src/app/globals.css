@@ -1,26 +1,67 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --ink: #0A0A0A;
+  --paper: #F5F0E8;
+  --cream: #EDE7DA;
+  --red-verdict: #C41E24;
+  --red-dark: #8B1419;
+  --gold-seal: #C5A55A;
+  --slate: #4A4A4A;
+  --steel: #6B6B6B;
+  --rule: #C4BBAB;
+  --green-verified: #1B6B3A;
+  --amber-caution: #B87A1A;
+
+  --font-display: var(--font-playfair), Georgia, serif;
+  --font-body: var(--font-source-serif), 'Times New Roman', serif;
+  --font-mono: var(--font-jetbrains), 'Courier New', monospace;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-ink: var(--ink);
+  --color-paper: var(--paper);
+  --color-cream: var(--cream);
+  --color-red-verdict: var(--red-verdict);
+  --color-gold-seal: var(--gold-seal);
+  --color-slate: var(--slate);
+  --color-steel: var(--steel);
+  --color-rule: var(--rule);
+  --color-green-verified: var(--green-verified);
+  --color-amber-caution: var(--amber-caution);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  border-radius: 0 !important;
+  margin: 0;
+  padding: 0;
+}
+
+/* The seal is explicitly specified as a circle — override the global border-radius reset */
+.seal-circle {
+  border-radius: 50% !important;
+}
+
+html,
+body {
+  height: 100%;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--ink);
+  color: var(--ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
 }
