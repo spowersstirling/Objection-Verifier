@@ -1,7 +1,6 @@
 "use client";
 
 import { VerificationResult } from "@/lib/types";
-import ScoreMeter from "./ScoreMeter";
 
 interface VerdictCardProps {
   result: VerificationResult;
@@ -32,7 +31,7 @@ export default function VerdictCard({ result }: VerdictCardProps) {
   return (
     <div
       style={{
-        width: "480px",
+        width: "100%",
         fontFamily: "var(--font-body)",
         border: "1px solid var(--rule)",
       }}
@@ -80,11 +79,10 @@ export default function VerdictCard({ result }: VerdictCardProps) {
       >
         {/* Outlet + author */}
         <div
-          className="font-mono"
+          className="font-display"
           style={{
-            fontSize: "10px",
-            letterSpacing: "3px",
-            textTransform: "uppercase",
+            fontSize: "14px",
+            fontWeight: 400,
             color: "var(--steel)",
             marginBottom: "8px",
           }}
@@ -96,8 +94,9 @@ export default function VerdictCard({ result }: VerdictCardProps) {
         <h1
           className="font-display"
           style={{
-            fontSize: "18px",
-            fontWeight: 700,
+            fontSize: "20px",
+            fontWeight: 400,
+            fontStyle: "italic",
             color: "var(--ink)",
             lineHeight: 1.3,
             marginBottom: "24px",
@@ -155,7 +154,6 @@ export default function VerdictCard({ result }: VerdictCardProps) {
               </div>
             </div>
           </div>
-          <ScoreMeter score={result.scores.aggregate} />
         </div>
 
         {/* Summary */}
@@ -194,11 +192,10 @@ export default function VerdictCard({ result }: VerdictCardProps) {
                 }}
               >
                 <div
-                  className="font-mono"
+                  className="font-display"
                   style={{
-                    fontSize: "9px",
-                    textTransform: "uppercase",
-                    letterSpacing: "1.5px",
+                    fontSize: "16px",
+                    fontWeight: 700,
                     color: "var(--slate)",
                     marginBottom: "6px",
                   }}
@@ -221,66 +218,24 @@ export default function VerdictCard({ result }: VerdictCardProps) {
           })}
         </div>
 
-        {/* Seal footer */}
+        {/* Footer */}
         <div
           style={{
             borderTop: "1px solid var(--rule)",
-            paddingTop: "16px",
-            display: "flex",
-            alignItems: "center",
-            gap: "12px",
+            paddingTop: "12px",
           }}
         >
-          <div
-            className="seal-circle"
+          <span
+            className="font-mono"
             style={{
-              width: "36px",
-              height: "36px",
-              border: "2px solid var(--gold-seal)",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              flexShrink: 0,
+              fontSize: "9px",
+              textTransform: "uppercase",
+              letterSpacing: "1.5px",
+              color: "var(--steel)",
             }}
           >
-            <span
-              className="font-display"
-              style={{
-                fontSize: "14px",
-                fontWeight: 900,
-                color: "var(--gold-seal)",
-                lineHeight: 1,
-              }}
-            >
-              O
-            </span>
-          </div>
-          <div>
-            <div
-              className="font-mono"
-              style={{
-                fontSize: "9px",
-                textTransform: "uppercase",
-                letterSpacing: "1.5px",
-                color: "var(--steel)",
-                lineHeight: 1.6,
-              }}
-            >
-              AI-VERIFIED ANALYSIS · OBJECTION MEDIA ACCURACY ENGINE
-            </div>
-            <div
-              className="font-mono"
-              style={{
-                fontSize: "9px",
-                textTransform: "uppercase",
-                letterSpacing: "1.5px",
-                color: "var(--steel)",
-                lineHeight: 1.6,
-              }}
-            >
-              FULL EVIDENCE RECORD AVAILABLE AT OBJECTION.AI
-            </div>
-          </div>
+            AI-VERIFIED ANALYSIS · OBJECTION MEDIA ACCURACY ENGINE · OBJECTION.AI
+          </span>
         </div>
       </div>
     </div>

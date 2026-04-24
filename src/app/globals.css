@@ -40,10 +40,6 @@
   padding: 0;
 }
 
-/* The seal is explicitly specified as a circle — override the global border-radius reset */
-.seal-circle {
-  border-radius: 50% !important;
-}
 
 html,
 body {
